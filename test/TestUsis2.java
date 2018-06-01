@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import proyectosis22.Edificio;
+import proyectosis22.*;
 
 /**
  *
@@ -48,4 +48,20 @@ public class TestUsis2 {
         String ci="23134";
         assertTrue("Es empleado del Edificio", edificio.esEmpleado(ci));
     }
+    @Test
+    public void mesValido(){
+        Fecha fecha;
+        fecha = new Fecha(20,4,2018);
+        assertTrue("Mes Correcto",fecha.mesValido());
+    }
+    @Test
+    public void mesErroneo(){
+        Fecha fecha=new Fecha(20,78,2018);
+        assertFalse(fecha.mesValido());
+    }
+    @Test
+    public void tieneDescuento(){
+        
+    }
+    
 }
