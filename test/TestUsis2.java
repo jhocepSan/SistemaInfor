@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import proyectosis22.Edificio;
 
 /**
  *
@@ -41,4 +42,10 @@ public class TestUsis2 {
     //
     // @Test
     // public void hello() {}
+    @Test
+    public void esEmpleado(){
+        Edificio edificio=new Edificio();
+        String ci="23134";
+        assertTrue("Es empleado del Edificio", edificio.esEmpleado(ci));
+    }
 }
