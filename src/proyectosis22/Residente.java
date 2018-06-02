@@ -9,15 +9,6 @@ package proyectosis22;
  *
  * @author sajhy
  */
-public class Edificio {
-    public void Edificio(){
+public class Residente {
     
-    }
-    public boolean esEmpleado(String ci){
-        return true;
-    }
-    public void agregarEmpleado(){
-    }
-    public void agragarResidente(){
-    }
 }
