@@ -5,6 +5,8 @@
  */
 package proyectosis22;
 
+import java.util.Calendar;
+
 /**
  *
  * @author sajhy
@@ -18,6 +20,21 @@ public class Edificio {
     }
     public void agregarEmpleado(){
     }
-    public void agragarResidente(){
+    public void agragarResidente(String ci){
+        
+    
     }
+    
+    public boolean validarResidente(int anioNacimiento)
+    { 
+        Calendar cal= Calendar.getInstance();
+        //cliente=new DatoPersonal();
+        return (cal.get(Calendar.YEAR))-anioNacimiento>=18;
+    } 
+    public boolean validarIngesos(int salario, int precioInmueble)
+    {
+            return salario>precioInmueble;
+    }
+    
+    
 }
