@@ -17,7 +17,8 @@ import static org.junit.Assert.*;
  * @author elvis
  */
 public class ResidenteTest {
-    
+    Edificio gelatina=new Edificio();
+    Residente residente;
     public ResidenteTest() {
     }
     
@@ -47,7 +48,13 @@ public class ResidenteTest {
         int anio=1990;
          assertTrue("mayor de 18 anios", edificio.validarResidente(anio));
     }
-
+    @Test
+    public void residenteExite(){
+        Fecha fecha=new Fecha(12,5,1990);
+        DatoPersonal datos=new DatoPersonal(87183,"Marco","Perez","Toli",fecha,"abogado",1000);
+        residente =new Residente(datos,"2G1");
+        assertTrue("residente valido",gelatina.esResidente(datos.getCi(),residente.getSala()));
+    }
  
 
     
@@ -63,8 +70,18 @@ public class ResidenteTest {
       assertTrue("salario mayor a precio del inmueble", edificio.validarIngesos(salario,inmueble ));
       
     }
-
-   
-    
-    
+    @Test
+    public void ciValido(){
+        Fecha fecha=new Fecha(12,5,1990);
+        DatoPersonal datos=new DatoPersonal(8776183,"Marco","Perez","Toli",fecha,"abogado",1000);
+        residente =new Residente(datos,"2G1");
+        assertTrue("El ci Valido",datos.ciValido());
+    }
+    @Test
+    public void ciNoValido(){
+        Fecha fecha=new Fecha(12,5,1990);
+        DatoPersonal datos=new DatoPersonal(768,"Marco","Perez","Toli",fecha,"abogado",1000);
+        residente =new Residente(datos,"2G1");
+        assertFalse("El ci Valido",datos.ciValido());
+    }
 }

@@ -18,15 +18,18 @@ public class Residente {
     Fecha fechaIngreso;
     Fecha fechaSalida;
     int salario;
-    String ocupacion;
+    String codSala;
    
-    public Residente(DatoInmueble interes,DatoPersonal cliente,Fecha fechaIngreso,Fecha fechaSalida,int salario,String acupacion){
+    public Residente(DatoInmueble interes,DatoPersonal cliente,Fecha fechaIngreso,Fecha fechaSalida,int salario,String codSala){
         this.interes=interes;
         this.cliente=cliente;
         this.fechaIngreso=fechaIngreso;
         this.fechaIngreso=fechaSalida;
         this.salario=salario;
-        this.ocupacion=ocupacion;
+        this.codSala=codSala;
+    }
+    public Residente(DatoPersonal cliente,String codSala ){
+        this.codSala=codSala;
     }
    public int getPrecioInmueble()
    {
@@ -48,8 +51,14 @@ public class Residente {
    {
        return this.salario;
    }
-   public String getOcupacion()
+   public String getSala()
    {
-       return this.ocupacion;
+       return this.codSala;
+   }
+   public void agredarFecha(Fecha fechaIngreso){
+       this.fechaIngreso=fechaIngreso;
+   }
+   public void agregarDatoInmueble(DatoInmueble dato){
+       
    }
 }

@@ -57,4 +57,8 @@ public class DatoPersonal {
     {
         return this.profecion;
     }
+    public boolean ciValido(){
+        int numDigitos=String.valueOf(this.ci).length();
+        return numDigitos>6 && numDigitos<8;
+    }
 }

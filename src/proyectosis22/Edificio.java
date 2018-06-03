@@ -22,7 +22,6 @@ public class Edificio {
     }
     public void agragarResidente(String ci){
         
-    
     }
     
     public boolean validarResidente(int anioNacimiento)
@@ -35,6 +34,7 @@ public class Edificio {
     {
             return salario>precioInmueble;
     }
-    
-    
+    public boolean esResidente(int ci,String codSala){
+        return true;
+    }
 }
