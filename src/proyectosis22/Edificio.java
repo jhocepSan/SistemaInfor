@@ -8,6 +8,7 @@ package proyectosis22;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -17,7 +18,7 @@ import java.util.Calendar;
  * @author sajhy
  */
 public class Edificio {
-    public String url = "jdbc:mysql://localhost:3306/prueba";
+    public String url = "jdbc:mysql://localhost:3306/sis2";
     public String user = "root";
     public String pass = "";
     public void Edificio(){
@@ -60,5 +61,45 @@ public class Edificio {
     }
     public boolean esResidente(int ci,String codSala){
         return true;
+    }
+    public void MostrarPlanillaAmbientes()
+    {
+        try (Connection connection = (Connection) DriverManager.getConnection(url, user, pass)) {
+            PreparedStatement s;
+            s = (PreparedStatement) connection.prepareStatement("select * from planilla");
+            
+          
+            ResultSet rs = s.executeQuery();
+            while (rs.next()){
+            // tratamos los datos
+            System.out.println(rs.getString("idInquilino"));
+            System.out.println(rs.getString("habitacion"));
+            
+            }
+            s.close();
+           
+        } catch (SQLException e) {
+            System.out.println(e);
+            
+        }
+    }
+    
+     public boolean llenarPlanillaAmbientes(Residente residente,String codHabitacion)
+    {   
+        ArrayList datos=residente.getDatosPersonales();
+        try (Connection connection = (Connection) DriverManager.getConnection(url, user, pass)) {
+            PreparedStatement s;
+            s = (PreparedStatement) connection.prepareStatement("insert into planilla (idInquilino,habitacion) VALUE (?,?)");
+            
+            s.setString(1,(String)datos.get(2));
+            s.setString(2,codHabitacion);
+            
+            int res = s.executeUpdate();
+            s.close();
+            return true;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return false;
+        }
     }
 }

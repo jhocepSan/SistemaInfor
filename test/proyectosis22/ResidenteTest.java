@@ -91,4 +91,5 @@ public class ResidenteTest {
         residente =new Residente(datos,"2G3");
         assertTrue("Almaceno Correctamente",gelatina.agragarResidente(residente));
     }
+   
 }

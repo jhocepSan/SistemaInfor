@@ -21,7 +21,7 @@ public class Residente {
     int salario;
     String codSala;
    
-    public Residente(DatoInmueble interes,DatoPersonal cliente,Fecha fechaIngreso,Fecha fechaSalida,int salario,String codSala){
+   public Residente(DatoInmueble interes,DatoPersonal cliente,Fecha fechaIngreso,Fecha fechaSalida,int salario,String codSala){
         this.interes=interes;
         this.cliente=cliente;
         this.fechaIngreso=fechaIngreso;
