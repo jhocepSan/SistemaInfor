@@ -84,4 +84,11 @@ public class ResidenteTest {
         residente =new Residente(datos,"2G1");
         assertFalse("El ci Valido",datos.ciValido());
     }
+    @Test
+    public void guardarResidente(){
+        Fecha fecha=new Fecha(12,5,1989);
+        DatoPersonal datos=new DatoPersonal(76881264,"Maria","Lopez","Vega",fecha,"Enfermera",800);
+        residente =new Residente(datos,"2G3");
+        assertTrue("Almaceno Correctamente",gelatina.agragarResidente(residente));
+    }
 }

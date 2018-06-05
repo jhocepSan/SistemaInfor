@@ -61,4 +61,7 @@ public class DatoPersonal {
         int numDigitos=String.valueOf(this.ci).length();
         return numDigitos>6 && numDigitos<8;
     }
+    public String getApellidos(){
+        return this.apellidoMaterno.concat(" ").concat(this.apellidoPaterno);
+    }
 }

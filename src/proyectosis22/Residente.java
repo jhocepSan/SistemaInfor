@@ -5,6 +5,7 @@
  */
 package proyectosis22;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -60,5 +61,15 @@ public class Residente {
    }
    public void agregarDatoInmueble(DatoInmueble dato){
        
+   }
+   public ArrayList getDatosPersonales(){
+       ArrayList datosP=new ArrayList();
+       datosP.add(this.cliente.getCi());
+       datosP.add(this.cliente.getNombre());
+       datosP.add(this.cliente.getApellidoPaterno());
+       datosP.add(this.cliente.getApellidoMaterno());
+       datosP.add(this.cliente.getProfesion());
+       datosP.add(this.cliente.getSueldo());
+       return datosP;
    }
 }
